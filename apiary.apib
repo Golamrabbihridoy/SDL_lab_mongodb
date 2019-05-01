@@ -1,0 +1,117 @@
+FORMAT: 1A
+HOST:https://studentsinformation.herokuapp.com/
+
+#studentinformation
+ studentinformation is a simple API allowing users to student name ,session ,age and passion.
+
+## studentsinformation Collection [/instructor/]
+
+### List All studentinformation [GET]
+
+List all the student information 
+
++ Response 200 (application/json)
+
+    [ 
+        {
+           "_id":"5cbdae1d88ec5c0f8423d94a",
+           "name":"Liam","session":"2017",
+           "age":20,
+           "passion":"Student"
+        },
+        {
+            "_id":"5cbdaee088ec5c0f8423d94b",
+            "name":"Hassan",
+            "session":"2015",
+            "age":21,
+            "passion":"Teacher"
+        },
+        {
+            "_id":"5cbdaf4d88ec5c0f8423d94c",
+            "name":"Golam",
+            "session":"2018",
+            "age":21,
+            "passion":"Student"
+        },
+        {
+            "_id":"5cbddfa188ec5c2a84712544",
+            "name":"Rabbi",
+            "session":"2018",
+            "age":21,
+            "passion":"Student"
+        }
+    ]
+### Add a New Student Information [POST]
+
+You may add student  information using this action. It takes a JSON
+object containing a pet information.
+
++ Request (application/json)
+
+        [
+           {
+
+            "name":"Golam Rabbi",
+            "session":"2018",
+            "age":21,
+            "passion":"Student"
+           }
+        ]
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /instructor/{id}
+
+    + Body
+
+            
+            {
+             "name":"Golam Rabbi",
+             "session":"2018",
+             "age":21,
+             "passion":"Student"
+            }
+
+## instructor [/instructor/{instructor_id}]
+
++ Parameters
+    + instructor_id (number) - ID of the instructor in the form of an integer
+
+### View a instructor Details [GET]
+
+View details of a student information
+
++ Response 200 (application/json)
+
+        [
+            {
+               "_id":"5cbdae1d88ec5c0f8423d94a",
+               "name":"Liam","session":"2017",
+               "age":20,
+               "passion":"Student"
+            }
+        ]
+
+### Update a instructor Details [PUT]
+
+Update information of a student information
+
++ Request (application/json)
+
+    + Body
+        
+            {
+               "name":"Liam","session":"2017",
+               "age":20,
+               "passion":"Student"
+            }
+
++ Response 204 (no content)
+
+### Delete a student information Details [DELETE]
+
+Delete a student information
+
++ Response 204 (no content)
